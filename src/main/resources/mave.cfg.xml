@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+
+<!-- For jdbc driver connection-->
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+<!-- For provide which database will be used-->
+<property name="connection.url">jdbc:mysql://localhost:3306/notetaker</property>
+
+<!-- For providing username-->
+<property name="connection.username">awez</property>
+
+<!-- For providing password-->
+<property name = "connection.password">alwaysawez</property>
+
+<!-- This is used for telling that this is mysql language used for db-->
+<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+<!-- For creating an table if not created and updating table if already created-->
+<!-- To create table everytime use create instead of auto -->
+<property name="hbm2ddl.auto">update</property>
+
+
+
+<!-- for format sql queries in output -->
+<property name="format_sql">true</property>
+
+<!-- to see which query hibernate have created -->
+<property name="show_sql">true</property>
+
+<!--To tell that which class is going to table  -->
+
+
+<mapping class="com.entities.Note" />
+</session-factory>
+
+</hibernate-configuration>
